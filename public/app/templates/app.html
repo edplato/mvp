@@ -1,0 +1,50 @@
+<div id="app container" class="container">
+  <div ng-if="artistFocus" class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="col-lg-6 artistCard">
+        <div>
+          <img class="img-circle" ng-src={{artistFocusData[0].image[3]['#text']}} alt="Music Artist Image" width="340" height="340">
+          <h2>{{artistFocusData[0].name}}</h2>
+          <div ng-repeat="tag in artistFocusData[0].bio.tags.tag" class="btn-group">
+            <button type="button" class="btn btn-default btn-xs genre-button" ng-click="clickGenreSearch(genre.name, $ctrl.reload)">
+              {{ tag.name }}
+            </button>
+          </div>
+        </div>
+        <div>
+          <p>{{artistFocusData[0].bio.bio.summary.slice(0, 500)}}...</p>
+          <p><a href={{artistFocusData[0].url}} class="btn btn-default" href="#" role="button" target="_blank">last.fm details &raquo;</a></p>
+        </div>
+      </div>
+      <div class="col-lg-6 similarArtists">
+        <h3>Similar Artists</h3>
+        <div ng-repeat="similarArtist in artistFocusData[0].bio.similar.artist">
+          <div class="col-sm-6 col-md-6">
+            <div>
+              <img ng-if="similarArtist.image[1]['#text']" class="img-circle" ng-src={{similarArtist.image[1]['#text']}} alt="Music Artist Image" width="100" height="100">
+              <img ng-if="!similarArtist.image[1]['#text']" class="img-circle" src="assets/notfound.png" alt="Music Artist Image" width="100" height="100">
+              <h4>{{similarArtist.name}}</h4>
+            </div>
+            <div>
+              <p><a href={{similarArtist.url}} class="btn btn-default" href="#" role="button" target="_blank">last.fm details &raquo;</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="!artistFocus" class="row">
+    <div ng-repeat="artist in TopTracksdata">
+      <div class="col-sm-6 col-md-6 artistCard">
+        <div>
+          <img class="img-circle" ng-src={{artist.image[2]['#text']}} alt="Music Artist Image" width="140" height="140">
+          <h2>{{artist.name}}</h2>
+        </div>
+        <div>
+          <p>{{artist.bio.bio.summary.slice(0, 200)}}...</p>
+          <p><a href={{artist.url}} class="btn btn-default" href="#" role="button" target="_blank">last.fm details &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

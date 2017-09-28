@@ -1,0 +1,14 @@
+<div class="genresearch-bar form-inline">
+  <h3>Search by Genre</h3>
+  <div id="app container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div ng-repeat="genre in TopGenresData" class="btn-group">
+          <button type="button" class="btn btn-default btn-xs genre-button" ng-click="clickGenreSearch(genre.name, $ctrl.reload)">
+            {{ genre.name }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

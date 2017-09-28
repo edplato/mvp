@@ -1,0 +1,11 @@
+<div class="search-bar form-inline">
+    <h1 class="search-title">Search Music Artists</h1>
+  <form>
+    <input class="form-control" type="text" ng-model="$ctrl.searchquery" />
+    <button class="btn" ng-click="clickArtistSearch($ctrl.searchquery, $ctrl.reload)">
+      <span class="glyphicon glyphicon-search"></span>
+    </button>
+  </form>
+  <hr>
+  <genre-search TopGenresdata="$scope.TopGenresdata" clickSearch="$scope.clickGenreSearch" reload="$ctrl.reload"></genre-search>
+</div>

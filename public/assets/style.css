@@ -1,0 +1,81 @@
+html {
+  overflow-y: scroll;
+}
+
+.jumbotron {
+  position: relative;
+  background: rgba(223, 240, 216, 0.7);
+  min-height: 400px;
+}
+
+.jumbotron:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  opacity: 0.5;
+  background-image: url('/assets/splash_sml.jpeg');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.site-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  opacity: 0.5;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+.search-title {
+  font-weight: 400;
+  text-shadow: 2px 2px 1px rgba(223, 240, 216, 0.7);
+}
+
+.genresearch-bar {
+  min-height: 110px;
+}
+
+.genre-button {
+  box-shadow: 1px 1px 1px rgba(223, 240, 216, 0.9);
+}
+
+.register, .login {
+  width: 50%;
+}
+
+@keyframes quickfade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slowfade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+button {
+  animation-name: quickfade;
+  animation-duration: 0.4s;
+}
+
+.artistCard, .similarArtists {
+  animation-name: slowfade;
+  animation-duration: 1.8s;
+}

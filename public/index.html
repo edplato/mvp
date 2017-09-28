@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <title>SuggesTUNES</title>
+  <link rel="stylesheet" type="text/css" href="assets/lib/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <script src="assets/lib/angular.js"></script>
+  <script src="assets/lib/angular-route.js"></script>
+  <script src="app/index.js"></script>
+  <script src="app/services/auth.js"></script>
+  <script src="app/services/factory.js"></script>
+  <script src="app/components/app.js"></script>
+  <script src="app/components/register.js"></script>
+  <script src="app/components/login.js"></script>
+  <script src="app/components/search.js"></script>
+</head>
+
+<body ng-app="mainApp">
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+          <li role="presentation" class="active"><a href="/">Home</a></li>
+          <li role="presentation"><a href="/login">Login</a></li>
+          <li role="presentation"><a href="/register">Register</a></li>
+        </ul>
+      </nav>
+      <h3 class="text-muted site-title"><span><img class="logo" src="/assets/logo.png"></span>suggesTUNES - powered by last.fm</h3>
+    </div>
+    <div class="jumbotron">
+      <div ng-controller="AppController">
+        <div>
+          <search reload="reloadData"></search>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div ng-view></div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/lib/jquery-3.2.1.min.js"></script>
+  <script src="assets/lib/bootstrap.js"></script>
+</body>
+
+</html>
