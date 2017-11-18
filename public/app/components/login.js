@@ -30,6 +30,6 @@ app.component('login', {
           $scope.setAuth(false);
           $location.path('/login');
         }
-      })
-  }
-})
+      });
+  };
+});

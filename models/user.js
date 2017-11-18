@@ -11,7 +11,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   }
-})
+});
 
 UserSchema.pre('save', function(next) {
   var user = this;
@@ -21,7 +21,7 @@ UserSchema.pre('save', function(next) {
     }
     user.password = hash;
     next();
-  })
+  });
 });
 
 const User = mongoose.model('User', UserSchema);
@@ -38,10 +38,9 @@ module.exports.getUserByUserName = function(username, callback) {
 
 module.exports.addUser = function(newUser, callback) {
   newUser.save(callback);
-}
+};
 
 module.exports.authenticateUser = function(username, password, passwordAttempt, callback) {
-  // console.log(username, password, passwordAttempt);
   User.findOne({ 'username': username }, function(err, user) {
     if (err) {
       return callback(err);
@@ -55,6 +54,6 @@ module.exports.authenticateUser = function(username, password, passwordAttempt, 
       } else {
         return callback();
       }
-    })
-  })
-}
+    });
+  });
+};

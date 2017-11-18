@@ -46,11 +46,11 @@ app.component('app', {
             method: 'GET',
           }).then(function(res) {
             track.bio = res.data.artist;
-          })
-        })
+          });
+        });
       }).then(function() {
         $scope.SaveTracksdata($scope.TopTracksdata);
-      })
+      });
 
     } else if ($scope.artistFocus) {
 
@@ -64,7 +64,7 @@ app.component('app', {
 
       }).then(function() {
         $scope.artistFocusSave($scope.artistFocusData);
-      })
+      });
 
     } else {
       angular.forEach($scope.TopTracksdata, function(track) {
@@ -79,9 +79,8 @@ app.component('app', {
 
         }).then(function() {
           $scope.SaveTracksdata($scope.TopTracksdata);
-        })
-
-      })
+        });
+      });
     }
   }
-})
+});

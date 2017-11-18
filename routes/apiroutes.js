@@ -11,7 +11,7 @@ router.post('/login', function(req, res, next) {
     if (err) {
       console.log(err);
     } else if (!user) {
-      return res.json({ success: false })
+      return res.json({ success: false });
     }
 
     User.authenticateUser(username, user.password, password, function(err, isMatch) {
@@ -20,17 +20,13 @@ router.post('/login', function(req, res, next) {
         console.log(err);
       }
       if (isMatch) {
-        // req.session.user = user;
-        // res.redirect('/');
-        console.log(req.session);
-        return res.json({ success: true })
+        return res.json({ success: true });
       } else {
-        return res.json({ success: false })
+        return res.json({ success: false });
       }
     });
-
-  })
-})
+  });
+});
 
 router.get('/login', function(req, res, next) {
   if (req.session && req.session.user) {
@@ -47,17 +43,16 @@ router.get('/login', function(req, res, next) {
         res.redirect('/');
       }
     });
-
   } else {
     res.redirect('/');
   }
-})
+});
 
 router.post('/register', function(req, res, next) {
   let newUser = new User({
     username: req.body.username,
     password: req.body.password
-  })
+  });
 
   User.addUser(newUser, function(err, user) {
     if (err) {
@@ -65,7 +60,7 @@ router.post('/register', function(req, res, next) {
     } else {
       res.json({ success: true });
     }
-  })
-})
+  });
+});
 
 module.exports = router;

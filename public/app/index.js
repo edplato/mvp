@@ -22,5 +22,4 @@ app.config(function($routeProvider, $locationProvider) {
     requireBase: false
   });
 
-
-})
+});

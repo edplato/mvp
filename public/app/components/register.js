@@ -30,6 +30,6 @@ app.component('register', {
           $scope.setAuth(false);
           $location.path('/register');
         }
-      })
-  }
-})
+      });
+  };
+});

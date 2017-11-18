@@ -23,15 +23,15 @@ angular.module('mainApp')
 
     $scope.clickArtistSearch = function(searchArtist, callback) {
 
-      var url = 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + searchArtist + '&limit=1&api_key=c651d6ac80087cf3588a44f57990d7aa&format=json'
+      var url = 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + searchArtist + '&limit=1&api_key=c651d6ac80087cf3588a44f57990d7aa&format=json';
 
       $http({
-          url: url,
-          method: 'GET',
-        }).then(function(response) {
+        url: url,
+        method: 'GET',
+      }).then(function(response) {
 
-          $scope.ArtistData = response.data.results.artistmatches.artist;
-        })
+        $scope.ArtistData = response.data.results.artistmatches.artist;
+      })
 
         .then(function() {
 
@@ -40,10 +40,9 @@ angular.module('mainApp')
           $scope.QueryMade();
           $location.path('/');
           callback();
-        })
-    }
-
-  })
+        });
+    };
+  });
 
 angular.module('mainApp')
   .component('genreSearch', {
@@ -72,7 +71,7 @@ angular.module('mainApp')
       }).then(function() {
 
         $scope.SaveGenresdata($scope.TopGenresData);
-      })
+      });
     }
 
     $scope.SaveTracksdata = loaded.setTracksData;
@@ -97,7 +96,6 @@ angular.module('mainApp')
         $scope.clearArtist();
         $location.path('/');
         callback();
-      })
-
-    }
-  })
+      });
+    };
+  });
