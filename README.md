@@ -2,7 +2,7 @@
 
 ## Features include:
 
-+ Suggest music based on top artists, search through genres, and similar artists handled through the LastFM API
++ SuggesTUNES is a music exploration application. Suggest music based on top artists, search through genres, and similar artists handled through the [LastFM API](https://www.last.fm/api)
 
 ## Stack:
 
